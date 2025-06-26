@@ -6,14 +6,14 @@ export const getPreparedPeople = (
 ) => {
   const query = filters.get('query') || '';
   const sex = filters.get('sex') || '';
-  const centuries = filters.getAll('centuries').map(Number) || [];
+  const centuries = filters.getAll('centuries').map(Number);
   const sort = filters.get('sort') || null;
   const order = filters.get('order') || '';
   let filteredPeople = [...people];
 
   if (query) {
     filteredPeople = filteredPeople.filter(person =>
-      person.name.toLowerCase().includes(query),
+      person.name.toLowerCase().includes(query.toLowerCase()),
     );
   }
 

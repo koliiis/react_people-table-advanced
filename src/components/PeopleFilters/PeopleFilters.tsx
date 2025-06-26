@@ -15,7 +15,7 @@ export const PeopleFilters = () => {
 
   const sex = searchParams.get('sex') || '';
   const query = searchParams.get('query') || '';
-  const centuries = searchParams.getAll('centuries') || [];
+  const centuries = searchParams.getAll('centuries');
 
   function handleQueryChange(event: React.ChangeEvent<HTMLInputElement>) {
     const params = new URLSearchParams(searchParams);
